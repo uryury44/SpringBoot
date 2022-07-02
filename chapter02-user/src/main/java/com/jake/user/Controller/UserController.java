@@ -1,6 +1,7 @@
 package com.jake.user.Controller;
 
 
+import com.jake.user.Expection.BizException;
 import com.jake.user.ServiceImpl.UserServiceImpl;
 import com.jake.user.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class UserController {
     @RequestMapping(value = "loginByMobile",method = RequestMethod.POST)
     public ApiResponse LoginByMobile(@RequestParam("reqId") String reqId,
                                      @RequestParam("mobileNo") String mobileNo,
-                                     @RequestParam("smsCode") String smsCode){
+                                     @RequestParam("smsCode") String smsCode) throws BizException {
         LoginByMobileReqVo vo = LoginByMobileReqVo.builder().reqId(reqId).mobileNo(mobileNo).smsCode(smsCode).build();
         LoginByMobileResVo resVo = userServiceImpl.loginByMobile(vo);
 
