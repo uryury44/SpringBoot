@@ -1,7 +1,7 @@
 package com.jake.user.Dao;
 
+import com.jake.user.entity.UserSmsCode;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
 @Mapper
 public interface UserSmsCodeDao {

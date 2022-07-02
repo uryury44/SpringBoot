@@ -1,8 +1,8 @@
 package com.jake.user.ServiceImpl;
 
-import com.jake.user.Dao.UserInfo;
+import com.jake.user.entity.UserInfo;
 import com.jake.user.Dao.UserInfoDao;
-import com.jake.user.Dao.UserSmsCode;
+import com.jake.user.entity.UserSmsCode;
 import com.jake.user.Dao.UserSmsCodeDao;
 import com.jake.user.Expection.BizException;
 import com.jake.user.Service.UserService;
@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.Locale;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 

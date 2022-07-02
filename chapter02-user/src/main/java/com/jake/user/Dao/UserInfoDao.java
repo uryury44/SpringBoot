@@ -1,5 +1,6 @@
 package com.jake.user.Dao;
 
+import com.jake.user.entity.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

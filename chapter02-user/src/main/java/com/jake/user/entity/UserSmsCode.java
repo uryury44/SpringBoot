@@ -1,4 +1,4 @@
-package com.jake.user.Dao;
+package com.jake.user.entity;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,11 +7,10 @@ import java.sql.Timestamp;
 
 @Data
 @Builder
-public class UserInfo {
+public class UserSmsCode {
     private String mobileNo;
-    private String userId;
-    private String isLogin;
-    private Timestamp longTime;
+    private String smsCode;
+    private Timestamp sendTime;
     private Timestamp createTime;
 
 }
