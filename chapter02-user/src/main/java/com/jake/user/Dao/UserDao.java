@@ -1,4 +1,4 @@
-package com.jake.user;
+package com.jake.user.Dao;
 
 public class UserDao {
 
