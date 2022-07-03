@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean getSmsCode(GetSmsCodeReqVo vo) {
-        //隨機生成6位簡訊驗證碼
+        //隨機生成6位簡訊驗證碼-－
         String smsCode = String.valueOf((int) (Math.random()*100000+1));
         //真實場景 需要呼叫簡訊平台介面
         //儲存使用者簡訊驗證碼資訊至簡訊驗證碼資訊表
