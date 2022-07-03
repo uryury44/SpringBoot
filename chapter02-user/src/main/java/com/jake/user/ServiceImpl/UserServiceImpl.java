@@ -59,11 +59,11 @@ public class UserServiceImpl implements UserService {
             //註冊
             if (userInfo == null){
                 String userId = String.valueOf((int) Math.random() * 100000+1);
-                userInfo = UserInfo.builder().userId(userId).mobileNo(loginByMobileReqVo.getMobileNo()).isLogin("1").longTime(new Timestamp(new Date().getTime())).build();
+                userInfo = UserInfo.builder().userId(userId).mobileNo(loginByMobileReqVo.getMobileNo()).isLogin("1").loginTime(new Timestamp(new Date().getTime())).build();
                 userInfoDao.insert(userInfo);
             //登入
             }else{
-                userInfo = UserInfo.builder().isLogin("1").longTime(new Timestamp(new Date().getTime())).build();
+                userInfo = UserInfo.builder().id(userInfo.getId()).isLogin("1").loginTime(new Timestamp(new Date().getTime())).build();
                 userInfoDao.updateById(userInfo);
             }
             //將使用者階段資訊儲存至Redis服務
