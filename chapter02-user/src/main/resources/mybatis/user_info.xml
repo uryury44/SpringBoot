@@ -10,7 +10,7 @@
     </insert>
 
     <select id="selectByMobileNo" resultType="com.jake.user.entity.UserInfo">
-        select <include refid="Base_column_List"></include>
+        select <include refid="Base_Column_List"></include>
         FROM user_info WHERE
         mobile_no=#{mobileNo} order by create_time desc limit 1
     </select>

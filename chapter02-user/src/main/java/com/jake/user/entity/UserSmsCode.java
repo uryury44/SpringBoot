@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 @Data
 @Builder
 public class UserSmsCode {
-    private String id;
+
     private String mobileNo;
     private String smsCode;
     private Timestamp sendTime;
