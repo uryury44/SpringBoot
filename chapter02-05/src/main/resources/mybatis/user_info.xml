@@ -5,7 +5,7 @@
         id,user_id,nick_name,mobile_no,password,is_login,login_time,is_del,create_time
     </sql>
     <insert id="insert" parameterType="com.jake.user.entity.UserInfo">
-        insert into user_sms_code(user_id,nick_name,mobile_no,password,is_login,login_time,is_del,create_time)
+        insert into user_info(user_id,nick_name,mobile_no,password,is_login,login_time,is_del,create_time)
         values (#{userId},#{nickName},#{mobileNo},#{password},#{isLogin},#{loginTime},#{isDel},#{createTime})
     </insert>
 
@@ -18,28 +18,28 @@
         update user_info
         <set>
             <if test="userId != null">
-                user_id=#{userId,jdbcType=VARCHAR}
+                user_id=#{userId,jdbcType=VARCHAR},
             </if>
             <if test="nickName != null">
-                nick_name=#{nickName,jdbcType=VARCHAR}
+                nick_name=#{nickName,jdbcType=VARCHAR},
             </if>
             <if test="mobileNo != null">
-                mobile_no=#{mobileNo,jdbcType=VARCHAR}
+                mobile_no=#{mobileNo,jdbcType=VARCHAR},
             </if>
             <if test="password != null">
-                password=#{password,jdbcType=VARCHAR}
+                password=#{password,jdbcType=VARCHAR},
             </if>
             <if test="isLogin != null">
-                is_login=#{isLogin,jdbcType=VARCHAR}
+                is_login=#{isLogin,jdbcType=VARCHAR},
             </if>
             <if test="loginTime != null">
-                login_time=#{loginTime,jdbcType=TIMESTAMP}
+                login_time=#{loginTime,jdbcType=TIMESTAMP},
             </if>
             <if test="isDel != null">
-                is_del=#{isDel,jdbcType=VARCHAR}
+                is_del=#{isDel,jdbcType=VARCHAR},
             </if>
             <if test="createTime != null">
-                create_time=#{createTime,jdbcType=TIMESTAMP}
+                create_time=#{createTime,jdbcType=TIMESTAMP},
             </if>
         </set>
         where id=#{id,jdbcType=BIGINT}

@@ -1,11 +1,11 @@
 package com.jake.user.ServiceImpl;
 
-import com.jake.user.entity.UserInfo;
 import com.jake.user.Dao.UserInfoDao;
-import com.jake.user.entity.UserSmsCode;
 import com.jake.user.Dao.UserSmsCodeDao;
 import com.jake.user.Expection.BizException;
 import com.jake.user.Service.UserService;
+import com.jake.user.entity.UserInfo;
+import com.jake.user.entity.UserSmsCode;
 import com.jake.user.vo.GetSmsCodeReqVo;
 import com.jake.user.vo.LoginByMobileReqVo;
 import com.jake.user.vo.LoginByMobileResVo;
@@ -59,11 +59,11 @@ public class UserServiceImpl implements UserService {
             //註冊
             if (userInfo == null){
                 String userId = String.valueOf((int) Math.random() * 100000+1);
-                userInfo = UserInfo.builder().userId(userId).mobileNo(loginByMobileReqVo.getMobileNo()).isLogin("1").longTime(new Timestamp(new Date().getTime())).build();
+                userInfo = UserInfo.builder().userId(userId).mobileNo(loginByMobileReqVo.getMobileNo()).isLogin("1").loginTime(new Timestamp(new Date().getTime())).build();
                 userInfoDao.insert(userInfo);
             //登入
             }else{
-                userInfo = UserInfo.builder().isLogin("1").longTime(new Timestamp(new Date().getTime())).build();
+                userInfo = UserInfo.builder().id(userInfo.getId()).isLogin("1").loginTime(new Timestamp(new Date().getTime())).build();
                 userInfoDao.updateById(userInfo);
             }
             //將使用者階段資訊儲存至Redis服務
