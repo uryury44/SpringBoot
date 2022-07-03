@@ -1,3 +1,5 @@
+server:
+  port: 8888
 spring:
   application:
     name: user
@@ -12,5 +14,4 @@ spring:
     host: 127.0.0.1
     port: 6379
     password: 123456
-  server:
-    port: 9091
+
